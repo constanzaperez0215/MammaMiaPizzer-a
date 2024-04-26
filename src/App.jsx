@@ -17,7 +17,7 @@ function App() {
       path='/'
       element={<Home />} />
       <Route
-      path='/pizzas:id'
+      path='/pizza/:id'
       element={<Pizza />} />
 
       <Route
