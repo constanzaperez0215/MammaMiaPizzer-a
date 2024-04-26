@@ -35,3 +35,28 @@
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.pizzaCards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 30px;
+}
+
+.miniPizza{
+    height: 30px;
+    width: 30px;
+}
+.precio{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+.btnsHome{
+    display: flex;
+    justify-content: space-evenly;
+
+}

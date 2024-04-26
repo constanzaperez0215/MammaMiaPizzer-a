@@ -1,6 +1,9 @@
 import Cards from "../components/Cards"
 
+
 const Home = () => {
+
+
   return (
     <>
     <div className="imgBackground">
@@ -10,7 +13,10 @@ const Home = () => {
       </div>
     </div>
 
-    <Cards />
+    <div className="pizzaCards ">
+      <Cards />
+    </div>
+
     </>
   )
 }
