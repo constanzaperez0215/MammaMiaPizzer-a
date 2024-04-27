@@ -4,20 +4,15 @@ export const PizzaContext = createContext();
 
 const PizzaPovider = ({ children }) => {
   const [pizzas, setPizzas] = useState([]);
-
+  const [carrito, setCarrito] = useState([])
 
   const getData = async () => {
     try {
       const res = await fetch("public/pizzas.json");
       const data = await res.json();
-      const newData = data.map((datos) => ({ ...datos, añadir: false }));
-
-      setPizzas(newData);
-
-
-      console.log();
-
-    } catch (error) {
+      setPizzas(data);
+    }
+    catch (error) {
       console.log(error);
     }
   };
@@ -26,8 +21,23 @@ const PizzaPovider = ({ children }) => {
     getData();
   }, []);
 
+  const add = ({ id, name , price, img }) => {
+    const productoEncontrado = carrito.findIndex((p)=> p.id === id)
+    const producto = { id, name , price, img, count: 1 }
+
+    if(productoEncontrado >= 0){
+      carrito[productoEncontrado].count++
+      setCarrito([...carrito])
+    }else{
+      setCarrito([...carrito, producto])
+    }
+  }
+
+  console.log(carrito)
+
+
   return (
-    <PizzaContext.Provider value={{ pizzas, setPizzas }}>
+    <PizzaContext.Provider value={{ pizzas, setPizzas, add, carrito, setCarrito }}>
       {children}
     </PizzaContext.Provider>
   );

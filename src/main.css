@@ -58,7 +58,7 @@
     height: 30px;
     width: 30px;
 }
-.precio{
+.precioCard{
     margin-left: 20px;
     font-size: 25px;
     font-weight: 600;
@@ -68,8 +68,43 @@
     justify-content: space-evenly;
 }
 
-.imgDetalle{
-    height: 300px;
-}
+
 
 /* Css de detalle de pizza */
+
+.containerPizza{
+    margin: 30px;
+    border: 2px solid black;
+    border-radius: 50px;
+    align-items: center;
+    display: flex;
+    gap: 30px;
+
+}
+.imgDetalle{
+    height: 300px;
+
+}
+
+.bodyPizza{
+    margin-top: 20px;
+    padding-right: 30px;
+}
+
+.precioPizza{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.footerPizza{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* formatos carrito */
+.ingCarrito{
+    height: 30px;
+
+}

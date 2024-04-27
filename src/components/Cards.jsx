@@ -4,21 +4,21 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Cards = () => {
-  const { pizzas } = useContext(PizzaContext);
+  const { pizzas, add } = useContext(PizzaContext);
 
   const navigate = useNavigate();
 
   return (
     <>
-      {pizzas.map((pizza) => {
-        return (
+      {pizzas.map((pizza) => (
           <Card key={pizza.id} style={{ width: "18rem" }}>
+            <div>
             <Card.Img variant="top" src={pizza.img} />
             <Card.Body>
               <Card.Title>{pizza.name.toUpperCase()}</Card.Title>
               <hr></hr>
               <Card.Text>
-              <h6>Ingredientes:</h6>
+                <h6>Ingredientes:</h6>
                 {pizza.ingredients.map((elem, index) => (
                   <p className="ingredientes" key={index}>
                     <img
@@ -31,7 +31,7 @@ const Cards = () => {
                 ))}
               </Card.Text>
 
-              <Card.Footer className="precio text-danger">
+              <Card.Footer className="precioCard text-danger">
                 ${pizza.price}
               </Card.Footer>
               <div className="btnsHome">
@@ -42,12 +42,15 @@ const Cards = () => {
                   Ver Más
                 </Button>
 
-                <Button variant="danger">Añadir</Button>
+                <Button variant="danger" onClick={() => add(pizza)}>
+                  Añadir
+                </Button>
               </div>
             </Card.Body>
+            </div>
           </Card>
-        );
-      })}
+        )
+      )}
     </>
   );
 };

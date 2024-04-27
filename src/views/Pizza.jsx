@@ -25,11 +25,11 @@ const Pizza = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="containerPizza" style={{ width: "95%" }}>
         <div>
           <img className="imgDetalle" src={detallePizza.img} alt={detallePizza.name} />
         </div>
-        <div>
+        <div className="bodyPizza">
           <h2>{detallePizza.name}</h2>
           <hr></hr>
           <p>{detallePizza.desc}</p>
@@ -46,15 +46,20 @@ const Pizza = () => {
               </p>
             ))}
           </div>
-          <p>Precio: ${detallePizza.price}</p>
+          <hr></hr>
+          <div className="footerPizza">
+            <p className="precioPizza">Precio: ${detallePizza.price}</p>
+            <Button variant="danger">Añadir</Button>
+          </div>
         </div>
       </div>
 
 
 
-      <Button className="btn btn-dark" onClick={volver} variant="primary">
+      <Button className="btn btnVolver btn-dark" onClick={volver} variant="primary">
         Volver
       </Button>
+
     </>
   )
 }
