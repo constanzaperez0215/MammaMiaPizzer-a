@@ -104,7 +104,31 @@
 }
 
 /* formatos carrito */
-.ingCarrito{
+
+.carrito{
+    margin: 30px;
+    width: 80%;
+}
+.containerCarrito{
+    border: 2px solid black;
+ 
+}
+
+.list{
+    display: flex;
+    justify-content: center;
+}
+.especificaciones{
+   display: flex;
+   flex-direction:row;
+   justify-content: space-between;
+   align-items: center;
+}
+.imgName{
+    display: flex;
+    gap: 30px;
+}
+.imgCarrito{
     height: 30px;
 
 }
