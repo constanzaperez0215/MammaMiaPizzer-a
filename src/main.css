@@ -6,7 +6,7 @@
     width: 30px;
 }
 
-.imgCarrito{
+.iconCarrito{
     height: 30px;
     width: 30px;
 }
@@ -76,13 +76,14 @@
     margin: 30px;
     border: 2px solid black;
     border-radius: 50px;
-    align-items: center;
     display: flex;
     gap: 30px;
 
 }
 .imgDetalle{
     height: 300px;
+    border-radius: 5%;
+    margin: 30px;
 
 }
 
@@ -109,10 +110,6 @@
     margin: 30px;
     width: 80%;
 }
-.containerCarrito{
-    border: 2px solid black;
- 
-}
 
 .list{
     display: flex;
@@ -130,5 +127,8 @@
 }
 .imgCarrito{
     height: 30px;
-
+}
+.totalCarrito{
+    align-items: end;
+    margin-top: 20px;
 }

@@ -21,6 +21,8 @@ const PizzaPovider = ({ children }) => {
     getData();
   }, []);
 
+  // Función que agrega las pizzas al carrito
+
   const add = ({ id, name , price, img }) => {
     const productoEncontrado = carrito.findIndex((p)=> p.id === id)
     const producto = { id, name , price, img, count: 1 }
@@ -32,12 +34,13 @@ const PizzaPovider = ({ children }) => {
       setCarrito([...carrito, producto])
     }
   }
+  // Función que calcula el total
+  const total = carrito.reduce((acumulador,{ count, price })=> acumulador + price*count, 0)
 
-  console.log(carrito)
-
+  
 
   return (
-    <PizzaContext.Provider value={{ pizzas, setPizzas, add, carrito, setCarrito }}>
+    <PizzaContext.Provider value={{ pizzas, setPizzas, add, carrito, setCarrito, total }}>
       {children}
     </PizzaContext.Provider>
   );

@@ -5,10 +5,9 @@ import { PizzaContext } from "../context/PizzaContext"
 
 
 const Pizza = () => {
-  const {pizzas} = useContext(PizzaContext)
+  const {pizzas, add} = useContext(PizzaContext)
   const [detallePizza, setDetallePizza]= useState({})
   const { id } = useParams()
-  console.log(detallePizza)
   const navigate = useNavigate()
 
   const obtenerDatos = () => {
@@ -49,7 +48,9 @@ const Pizza = () => {
           <hr></hr>
           <div className="footerPizza">
             <p className="precioPizza">Precio: ${detallePizza.price}</p>
-            <Button variant="danger">Añadir</Button>
+            <Button variant="danger" onClick={() => add(detallePizza)}>
+                  Añadir
+                </Button>
           </div>
         </div>
       </div>
