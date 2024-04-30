@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { PizzaContext } from "../context/PizzaContext";
-import { Col, ListGroup, Row, Tab } from "react-bootstrap";
+import { Col, ListGroup, Row, Tab, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Carrito = () => {
   const { carrito, total, mas, menos } = useContext(PizzaContext);
+  const navigate = useNavigate()
 
   return (
     <>
@@ -26,9 +28,8 @@ const Carrito = () => {
                     <h5>{elem.name.toUpperCase()}</h5>
                   </div>
 
-                  <div>
-                    <h6>${elem.price * elem.count}</h6>
-                  </div>
+                  <div className="compra">
+                    <h5>${elem.price * elem.count}</h5>
 
                   <button className="btn btn-danger" onClick={() => menos(index)}>
                     -
@@ -37,15 +38,20 @@ const Carrito = () => {
                   <button className="btn btn-success" onClick={() => mas(index)}>
                     +
                   </button>
+                  </div>
                 </ListGroup.Item>
               ))}
             </ListGroup>
             <ListGroup className="totalCarrito">
               <h4>Total: ${total}</h4>
+              <button className="btn btn-primary">Ir a pagar</button>
             </ListGroup>
           </Col>
         </Row>
       </Tab.Container>
+      <Button className="btn btnVolver btn-dark" onClick={()=>navigate("/")} variant="primary">
+        Volver
+      </Button>
     </>
   );
 };

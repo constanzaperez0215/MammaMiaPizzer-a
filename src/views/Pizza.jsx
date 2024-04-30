@@ -18,10 +18,6 @@ const Pizza = () => {
     obtenerDatos()
   }, [pizzas])
 
-  const volver = () => {
-    navigate("/");
-  };
-
   return (
     <>
       <div className="containerPizza" style={{ width: "95%" }}>
@@ -57,7 +53,7 @@ const Pizza = () => {
 
 
 
-      <Button className="btn btnVolver btn-dark" onClick={volver} variant="primary">
+      <Button className="btn btnVolver btn-dark" onClick={()=>navigate("/")} variant="primary">
         Volver
       </Button>
 
