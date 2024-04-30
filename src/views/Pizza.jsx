@@ -17,7 +17,7 @@ const Pizza = () => {
   useEffect(()=> {
     obtenerDatos()
   }, [pizzas])
-  
+
   const volver = () => {
     navigate("/");
   };

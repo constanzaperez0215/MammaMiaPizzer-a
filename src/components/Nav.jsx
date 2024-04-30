@@ -6,10 +6,8 @@ import { PizzaContext } from '../context/PizzaContext';
 
 
 const NavBar = () => {
-  const {carrito, total} = useContext(PizzaContext)
-    const setActiveClass=({isActive}) => (isActive ? " red" : "menu" )
-
-    
+  const { total} = useContext(PizzaContext)
+  const setActiveClass=({isActive}) => (isActive ? "active" : "menu" )
 
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark">
@@ -20,7 +18,7 @@ const NavBar = () => {
         <Nav className="ms-auto">
           <NavLink to="/" className={setActiveClass}>Home</NavLink>
           <NavLink to="/carrito" className={setActiveClass}><img className='iconCarrito'  src='https://cdn-icons-png.flaticon.com/512/8146/8146003.png' alt='carrito de compras'/></NavLink>
-          <Nav.Link href="#link">{total}</Nav.Link>
+          <Nav.Link to="/carrito">{total}</Nav.Link>
 
         </Nav>
       </Navbar.Collapse>

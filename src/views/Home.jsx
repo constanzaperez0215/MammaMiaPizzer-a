@@ -1,8 +1,6 @@
-import Cards from "../components/Cards"
-
+import Cards from "../views/Cards"
 
 const Home = () => {
-
 
   return (
     <>

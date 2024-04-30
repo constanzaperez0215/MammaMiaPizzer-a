@@ -3,7 +3,7 @@ import { PizzaContext } from "../context/PizzaContext";
 import { Col, ListGroup, Row, Tab } from "react-bootstrap";
 
 const Carrito = () => {
-  const { carrito, total } = useContext(PizzaContext);
+  const { carrito, total, mas, menos } = useContext(PizzaContext);
 
   return (
     <>
@@ -29,6 +29,14 @@ const Carrito = () => {
                   <div>
                     <h6>${elem.price * elem.count}</h6>
                   </div>
+
+                  <button className="btn btn-danger" onClick={() => menos(index)}>
+                    -
+                  </button>
+                  <p>{elem.count}</p>
+                  <button className="btn btn-success" onClick={() => mas(index)}>
+                    +
+                  </button>
                 </ListGroup.Item>
               ))}
             </ListGroup>
